@@ -2,6 +2,7 @@ const Post = require("../models/Post");
 const sharp = require("sharp");
 const path = require("path");
 const fs = require("fs");
+const cloudinary = require("../config/cloudinaryConfig");
 
 module.exports = {
   async index(request, response) {
@@ -11,52 +12,40 @@ module.exports = {
   },
 
   async store(request, response) {
+    // Informações da Imagem
     const { author, place, description, hashtags } = request.body;
-    const path = request.file.path;
+    const filePath = request.file.path;
+    const fileName = request.file.filename;
 
-    console.log("request.file.path:", request.file.path);
-    //para saber o que usar no sharp basta dar um console.log
-    // no resquest.file e verificar o conteudo do path.
-    //console.log("Path", request.file.path);
-
-    //salvando em JPG
-    // const [name] = image.split(".");
-    // const fileName = `${name}.jpg`;
-
-    // await sharp(request.file.path)
-    //   .resize(500)
-    //   .jpeg({ quality: 70 })
-    //   .toFile(path.resolve(request.file.destination, "resized", image));
-
-    //request.file.destination é encontrado dentro das propriedades
-    //request.file
-
-    await cloudinary.uploader.upload(
-      path,
-      { public_id: `omnistack07/${fileName}` },
+    //realizando o upload da Imagem
+    const picture = await cloudinary.uploader.upload(
+      filePath,
+      {
+        public_id: `omnistack07/${new Date().toISOString() + fileName}`,
+      },
       function (err, image) {
         if (err) {
           console.warn(err);
-        } else {
-          // console.log("image:", image);
-          fs.unlinkSync(path);
-          return response.json(image);
         }
       }
     );
 
+    //excluindo a imagem do disco.
     fs.unlinkSync(request.file.path);
+
+    // endereço da imagem a ser acessado pelo Backend
+    const image = picture.secure_url;
 
     const post = await Post.create({
       author,
       place,
       description,
       hashtags,
-      image: fileName,
+      image,
     });
 
     request.io.emit("Post", post);
 
-    response.json(post);
+    return response.json(post);
   },
 };
