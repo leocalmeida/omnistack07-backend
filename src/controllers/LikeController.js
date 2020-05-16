@@ -8,8 +8,6 @@ module.exports = {
 
     await post.save();
 
-    request.io.emit("Like", post);
-
     return response.json(post);
   },
 };

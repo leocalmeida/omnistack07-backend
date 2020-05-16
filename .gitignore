@@ -1,4 +1,6 @@
 node_modules/
 
-upload/resized/*
-!upload/resized .gitkeep
+MINHA_CHAVE
+
+src/upload/resized/*
+!src/upload/resized .gitkeep

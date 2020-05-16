@@ -44,8 +44,6 @@ module.exports = {
       image,
     });
 
-    request.io.emit("Post", post);
-
     return response.json(post);
   },
 };
