@@ -1,4 +1,4 @@
-[![Generic badge](https://img.shields.io/badge/node->=12.16.3-<COLOR>.svg)](https://shields.io/)
+[![node](https://img.shields.io/badge/node->=12.16.3-<COLOR>.svg)](https://nodejs.org/en/)
 
 # Semana OmniStack07 - InstaRocket
 ## Backend da Aplicação.
