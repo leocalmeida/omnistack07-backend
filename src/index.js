@@ -1,8 +1,9 @@
 const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
-const mongoConnect = require("./config/mongoConnect");
-const path = require("path");
+require("dotenv").config();
+
+const MONGO_CONNECTION = process.env.MONGO_CONNECTION;
 
 const cors = require("cors");
 
@@ -11,7 +12,7 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
-mongoose.connect(mongoConnect, {
+mongoose.connect(MONGO_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -25,4 +26,4 @@ app.use(cors());
 app.use(routes);
 app.use(express.json());
 
-server.listen(3334);
+server.listen(process.env.PORT || 3334);

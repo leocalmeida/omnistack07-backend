@@ -1,6 +1,6 @@
 node_modules/
 
-MINHA_CHAVE
+.env
 
 src/upload/resized/*
 !src/upload/resized .gitkeep
