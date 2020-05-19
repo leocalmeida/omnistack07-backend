@@ -1,1 +1,5 @@
-//mongodb+srv://almleoc:<password>@cluster0-mme2e.mongodb.net/test?retryWrites=true&w=majority
+require("dotenv").config();
+
+const MONGO_CONNECTION = process.env.MONGO_CONNECTION;
+
+module.exports = MONGO_CONNECTION;

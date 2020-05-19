@@ -1,6 +1,4 @@
 const Post = require("../models/Post");
-const sharp = require("sharp");
-const path = require("path");
 const fs = require("fs");
 const cloudinary = require("../config/cloudinaryConfig");
 
