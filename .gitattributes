@@ -1,2 +1,0 @@
-cloudinaryConfig.* filter=git-crypt diff=git-crypt
-mongoConnect.* filter=git-crypt diff=git-crypt
