@@ -1,6 +1,9 @@
 const Post = require("../models/Post");
 const fs = require("fs");
 const cloudinary = require("../config/cloudinaryConfig");
+require("dotenv").config();
+
+const VALIDA = process.env.VALIDA;
 
 module.exports = {
   async index(request, response) {
@@ -14,6 +17,13 @@ module.exports = {
     const { author, place, description, hashtags } = request.body;
     const filePath = request.file.path;
     const fileName = request.file.filename;
+    const valida = request.headers.authorization;
+
+    if (VALIDA != valida) {
+      return response.json({
+        fail: "não tem autorização para subir uma imagem",
+      });
+    }
 
     //realizando o upload da Imagem
     const picture = await cloudinary.uploader.upload(
