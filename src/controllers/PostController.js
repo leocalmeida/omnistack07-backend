@@ -21,7 +21,7 @@ module.exports = {
 
     if (VALIDA != valida) {
       return response.json({
-        fail: "não tem autorização para subir uma imagem",
+        fail: "Você não possui autorização para subir uma imagem. Contate o Suporte! +55 16 9-9345-1699",
       });
     }
 
