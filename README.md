@@ -3,7 +3,7 @@
 # Semana OmniStack07 - InstaRocket
 ## Backend da Aplicação.
 
-Foi mostrado no curso como realizar um FAKE do Instagram,de forma a praticar, ensinar e elucidar conceitos de Node e ReactJs.
+Foi mostrado no curso como realizar um FAKE do Instagram, de forma a praticar, ensinar e elucidar conceitos de Node e ReactJs.
 
 * Link para o repositório do Frontend da Aplicação: https://github.com/leocalmeida/omnistack07-frontend/
 
