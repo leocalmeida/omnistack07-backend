@@ -1,6 +1,7 @@
 const Post = require("../models/Post");
 const fs = require("fs");
 const cloudinary = require("../config/cloudinaryConfig");
+
 require("dotenv").config();
 
 const VALIDA = process.env.VALIDA;
@@ -21,7 +22,8 @@ module.exports = {
 
     if (VALIDA != valida) {
       return response.json({
-        fail: "Você não possui autorização para subir uma imagem. Contate o Suporte! +55 16 9-9345-1699",
+        fail:
+          "Você não possui autorização para subir uma imagem. Contate o Suporte! +55 16 9-9345-1699",
       });
     }
 
@@ -52,6 +54,7 @@ module.exports = {
       image,
     });
 
+    request.io.emit("post", post);
     return response.json(post);
   },
 };
