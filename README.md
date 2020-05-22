@@ -3,4 +3,8 @@
 # Semana OmniStack07 - InstaRocket
 ## Backend da Aplicação.
 
-Este é o backend da aplicação que imita o Instagram.
+Foi mostrado no curso como realizar um FAKE do Instagram,de forma a praticar, ensinar e elucidar conceitos de Node e ReactJs.
+
+* Link para o repositório do Frontend da Aplicação: https://github.com/leocalmeida/omnistack07-frontend/
+
+* Link para visualizar como ficou a aplicação ao ser feito o deploy no Heroku: https://omnistack07-frontend.herokuapp.com/
