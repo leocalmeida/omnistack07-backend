@@ -15,5 +15,7 @@ Resultado da utilização do [Socket.IO](https://socket.io/), [UseEffect](https:
 
 * Link para visualizar como ficou a aplicação ao ser feito o deploy no Heroku: [Aplicação](https://omnistack07-frontend.herokuapp.com/)
 
-
 *IMPORTANTE: Por motivos de segurança, o upload de arquivos está bloqueado.*
+
+Preview da Aplicação
+![Preview](https://res.cloudinary.com/almleoc/image/upload/v1590160729/README.md/OmniStack07/Preview_euql5v.jpg "Preview")
