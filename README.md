@@ -5,7 +5,7 @@
 
 Foi mostrado no curso como realizar um FAKE do Instagram, de forma a praticar, ensinar e elucidar conceitos de Node e ReactJs.
 
-Na aplicação você pode realizar o upload de uma imagem, e tem a opção de incluir ou não alguns dados adicionais com relação a mesma. E também tem a opção de Curtir a foto.
+Na aplicação você pode realizar um **Upload** de uma imagem, e tem a opção de incluir ou não alguns dados adicionais com relação a mesma. E também tem a opção de **Curtir** a foto.
 
 Além disso, a aplicação é atualizada em Tempo Real.
 Resultado da utilização do [Socket.IO](https://socket.io/), [UseEffect](https://reactjs.org/docs/hooks-effect.html) e [UseState](https://reactjs.org/docs/hooks-state.html).
